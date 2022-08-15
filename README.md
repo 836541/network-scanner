@@ -9,7 +9,7 @@ ARGUMENTS
 ----------
 
 -a or --address= 
-Input the IP Address that you want to search if it's present on network.
+Input the IP Address you want to check the presence on network.
 If you use it with a CIDR Notation, like 192.168.0.1/24, then all the network will be scanned.
 
 
