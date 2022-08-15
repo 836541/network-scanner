@@ -67,10 +67,6 @@ def printOutput(singlerun, arp_ether_request):
     loop = 1 
     while loop:
         answered_request = scapy.srp(arp_ether_request, timeout= 1, verbose= False)[0]
-        if len(answered_request) == 0:
-            print("--" *35)
-            print ("[X] NO HOSTS FOUND")
-            quit()
 
         for element in answered_request:
             if [element[1].psrc, element[1].hwsrc] in already_printed: 
