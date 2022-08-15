@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+
+# /undead_warlock
+# GPL3.0-or-foward
+
 import scapy.all as scapy 
 import optparse 
 import re 
