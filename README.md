@@ -32,7 +32,7 @@ IMPROVEMENTS
 ------------------
 
 1- Fancier Output 
-2- Real-time update if a host leaves the network (currently the real-time scan only prints new hosts, but don't say if a host leaves)
+2- Real-time update if a host leaves the network 
 
 
 ----------------------
