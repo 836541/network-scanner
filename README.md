@@ -26,7 +26,13 @@ FEATURES
 2- One-time Scan
 3- MacVendor Lookup
 4- Error if a non IPv4 is inputed.
-5 ( FUTURE IMPROVEMENT) - Fancy Output in Terminal
+
+---------------
+IMPROVEMENTS
+------------------
+
+1- Fancier Output 
+2- Real-time update if a host leaves the network (currently the real-time scan only prints new hosts, but don't say if a host leaves)
 
 
 ----------------------
