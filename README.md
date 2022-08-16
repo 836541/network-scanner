@@ -9,15 +9,18 @@ Linux or Windows.
 
 -a or --address= 
 Input the IP Address you want to check the presence on network.
+
 If you use it with a CIDR Notation, like 192.168.0.1/24, then all the network will be scanned.
 
 
 -s or --singlerun= 
 If you use -s, the software will run once. 
+
 If you don't use -s, the software will scan for new hosts in real time.
 
 -l or --log=
 If you use -l, input a filename to be created with the output logs
+
 If you don't use -l, no logs are created
 
 
