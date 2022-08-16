@@ -71,6 +71,8 @@ def printOutput(singlerun, arp_ether_request, log):
     print("\nIPv4\t\tMAC Address\t\thwlen\tplen\tMAC Vendor")
     print("--"*38)
     already_printed = list() 
+    if log:
+        already_logged = list()
 
     loop = 1 
     while loop:
@@ -104,7 +106,7 @@ def printOutput(singlerun, arp_ether_request, log):
 
 
 def main(): 
-    singlerun, address = arguments() 
+    singlerun, address, log = arguments() 
     checkAddress(address) 
     arp_ether_request = arpRequest(address)
     printOutput(singlerun, arp_ether_request, log)
