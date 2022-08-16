@@ -18,6 +18,8 @@ If you use -s, the software will run once.
 
 If you don't use -s, the software will scan for new hosts in real time.
 
+
+
 3- *-l or --log=*
 If you use -l, input a filename to be created with the output logs
 
