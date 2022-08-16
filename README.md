@@ -1,11 +1,10 @@
-# host-scanner
+# **HOST SCANNER**
 Enumerates hosts on a network. ARP-Based.
 Linux or Windows.
 
+
 ----------
-
-ARGUMENTS
-
+**ARGUMENTS**
 ----------
 
 -a or --address= 
@@ -19,20 +18,31 @@ If you don't use -s, the software will scan for new hosts in real time.
 
 
 ------------------
-FEATURES
+**FEATURES**
 ------------------
 
 1- Real-time Scan
+
 2- One-time Scan
+
 3- MacVendor Lookup
+
 4- Error if a non IPv4 is inputed.
 
----------------
+--------------------------
+**LEGACY_HOSTSCAN.PY**
+---------------------------
+1- The real-time scan of this version doesn't update IPs that leave the network, it only updates new hosts.
+
+Useful if you don't want to miss the IPs/MACs that leave the network.
+
+
+------------------
 IMPROVEMENTS
 ------------------
 
 1- Fancier Output 
-2- Real-time update if a host leaves the network 
+2- Log Output Containing IPs, MAC Addresses and MAC Vendors.
 
 
 ----------------------
