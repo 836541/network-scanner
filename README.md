@@ -27,12 +27,15 @@ If you don't use -s, the software will scan for new hosts in real time.
 
 3- MacVendor Lookup
 
-4- Error if a non IPv4 is inputed.
+4- Can create logs with the output
+
+5- Error if a non IPv4 is inputed.
 
 --------------------------
 **LEGACY_HOSTSCAN.PY**
 ---------------------------
 1- The real-time scan of this version doesn't update IPs that leave the network, it only updates new hosts.
+(Also the output isnt as clean because this version doesnt use a function to clear terminal)
 
 Useful if you don't want to miss the IPs/MACs that leave the network.
 
