@@ -54,7 +54,7 @@ IMPROVEMENTS
 ------------------
 
 1- Fancier Output 
-2- Log Output Containing IPs, MAC Addresses and MAC Vendors.
+
 
 
 ----------------------
