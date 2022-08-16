@@ -112,7 +112,7 @@ def printOutput(singlerun, arp_ether_request, log):
             if log:
                 if [element[1].psrc, element[1].hwsrc, MacVendor] not in already_logged:
                     with open(log, "a") as logfile:
-                        logfile.write("%s,%s,%s \n"    %({element[1].psrc}, element[1].hwsrc, MacVendor))
+                        logfile.write("%s,%s,%s \n"    %(element[1].psrc, element[1].hwsrc, MacVendor))
                     already_logged.append([element[1].psrc, element[1].hwsrc, MacVendor])
 
         loop += 1
