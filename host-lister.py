@@ -67,15 +67,13 @@ def arpRequest(Address):
 
 def printOutput(singlerun, arp_ether_request):
     print("\nIPv4\t\tMAC Address\t\thwlen\tplen\tMAC Vendor")
+    print("--"*38)
     already_printed = list() 
 
     loop = 1 
     while loop:
         answered_request = scapy.srp(arp_ether_request, timeout= 1, verbose= False)[0]
-        if len(answered_request) == 0:
-            print("--" *35)
-            print ("[X] NO HOSTS FOUND")
-            quit()
+        
 
         for element in answered_request:
             if [element[1].psrc, element[1].hwsrc] in already_printed: 
@@ -88,7 +86,7 @@ def printOutput(singlerun, arp_ether_request):
             except:
                 MacVendor = "Unknown"
 
-            print("--"*38) 
+           
             print(f"{element[1].psrc}\t{element[1].hwsrc}\t{element[1].hwlen}\t{element[1].plen} \t{MacVendor}" )
 
         if singlerun: 
