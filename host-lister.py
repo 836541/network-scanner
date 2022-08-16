@@ -3,6 +3,7 @@
 # /undead_warlock
 # GPL3.0-or-foward
 
+from mac_vendor_lookup import MacLookup
 import scapy.all as scapy 
 import optparse 
 import re 
@@ -65,12 +66,16 @@ def arpRequest(Address):
 
 
 def printOutput(singlerun, arp_ether_request):
-    print("\nIPv4\t\t\tMAC Address\t\thwlen\tplen")
+    print("\nIPv4\t\tMAC Address\t\thwlen\tplen\tMAC Vendor")
     already_printed = list() 
 
     loop = 1 
     while loop:
         answered_request = scapy.srp(arp_ether_request, timeout= 1, verbose= False)[0]
+        if len(answered_request) == 0:
+            print("--" *35)
+            print ("[X] NO HOSTS FOUND")
+            quit()
 
         for element in answered_request:
             if [element[1].psrc, element[1].hwsrc] in already_printed: 
@@ -78,8 +83,13 @@ def printOutput(singlerun, arp_ether_request):
 
             already_printed.append([element[1].psrc, element[1].hwsrc]) 
 
-            print("--"*35) 
-            print(f"{element[1].psrc} \t\t{element[1].hwsrc} \t {element[1].hwlen} \t {element[1].plen}")
+            try :
+                MacVendor = MacLookup().lookup(element[1].hwsrc)
+            except:
+                MacVendor = "Unknown"
+
+            print("--"*45) 
+            print(f"{element[1].psrc}\t{element[1].hwsrc}\t{element[1].hwlen}\t{element[1].plen} \t{MacVendor}" )
 
         if singlerun: 
             loop = 0 
@@ -92,8 +102,6 @@ def main():
     checkAddress(address) 
     arp_ether_request = arpRequest(address)
     printOutput(singlerun, arp_ether_request)
-    
-    return 0
 
 main() 
 
