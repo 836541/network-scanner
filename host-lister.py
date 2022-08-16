@@ -79,7 +79,7 @@ def printOutput(singlerun, arp_ether_request):
             already_printed.append([element[1].psrc, element[1].hwsrc]) 
 
             print("--"*35) 
-            print(f"{element[1].psrc} \t\t {element[1].hwsrc} \t {element[1].hwlen} \t {element[1].plen}")
+            print(f"{element[1].psrc} \t\t{element[1].hwsrc} \t {element[1].hwlen} \t {element[1].plen}")
 
         if singlerun: 
             loop = 0 
