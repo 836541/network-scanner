@@ -88,7 +88,7 @@ def printOutput(singlerun, arp_ether_request):
             except:
                 MacVendor = "Unknown"
 
-            print("--"*45) 
+            print("--"*38) 
             print(f"{element[1].psrc}\t{element[1].hwsrc}\t{element[1].hwlen}\t{element[1].plen} \t{MacVendor}" )
 
         if singlerun: 
