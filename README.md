@@ -7,7 +7,7 @@ Linux or Windows.
 **ARGUMENTS**
 ----------
 
-1- *-a or --address= *
+1- *-a or --address=*
 Input the IP Address you want to check the presence on network.
 
 If you use it with a CIDR Notation, like 192.168.0.1/24, then all the network will be scanned.
