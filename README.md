@@ -26,4 +26,11 @@ FEATURES
 2- One-time Scan
 3- MacVendor Lookup
 4- Error if a non IPv4 is inputed.
+5 ( FUTURE IMPROVEMENT) - Fancy Output in Terminal
+
+
+----------------------
+REQUIREMENTS
+-----------------
+pip install mac_vendor_lookup 
 
