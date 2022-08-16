@@ -92,6 +92,8 @@ def main():
     checkAddress(address) 
     arp_ether_request = arpRequest(address)
     printOutput(singlerun, arp_ether_request)
+    
+    return 0
 
 main() 
 
