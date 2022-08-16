@@ -1,5 +1,5 @@
 # **HOST SCANNER**
-Enumerates hosts on a network. ARP-Based.
+Enumerates and logs hosts on a network. ARP-Based.
 Linux or Windows.
 
 
