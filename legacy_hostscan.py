@@ -11,16 +11,18 @@ import re
 def arguments():               # optparse arguments 
     singlerun = "singlerun"
     address   = "address"
+    log       = "log"
 
     parser = optparse.OptionParser() 
     parser.add_option("-a", "--address", dest= address, help= "Target's IPV4 Address. Use CIDR for full network scan.")
     parser.add_option("-s", "--singlerun", dest= singlerun, action= "store_true", default= False, help= "True: One-time Scan | False: Real-time Scan")
+    parser.add_option("-l", "--log", dest= log, default= False, help= "If used, input a filename to be created with logs")
     (inputs, args) = parser.parse_args()
 
     if not inputs.address:
         parser.error("\n[X] PLEASE INPUT AN IPV4 ADDRESS")
 
-    return (inputs.singlerun, inputs.address)
+    return (inputs.singlerun, inputs.address, inputs.log)
 
 
 
@@ -65,7 +67,7 @@ def arpRequest(Address):
     return arp_ether_request 
 
 
-def printOutput(singlerun, arp_ether_request):
+def printOutput(singlerun, arp_ether_request, log):
     print("\nIPv4\t\tMAC Address\t\thwlen\tplen\tMAC Vendor")
     print("--"*38)
     already_printed = list() 
@@ -88,6 +90,12 @@ def printOutput(singlerun, arp_ether_request):
 
            
             print(f"{element[1].psrc}\t{element[1].hwsrc}\t{element[1].hwlen}\t{element[1].plen} \t{MacVendor}" )
+            
+            if log:
+                if [element[1].psrc, element[1].hwsrc, MacVendor] not in already_logged:
+                    with open(log, "a") as logfile:
+                        logfile.write("%s,%s,%s \n"    %({element[1].psrc}, element[1].hwsrc, MacVendor))
+                    already_logged.append([element[1].psrc, element[1].hwsrc, MacVendor])
 
         if singlerun: 
             loop = 0 
@@ -99,7 +107,7 @@ def main():
     singlerun, address = arguments() 
     checkAddress(address) 
     arp_ether_request = arpRequest(address)
-    printOutput(singlerun, arp_ether_request)
+    printOutput(singlerun, arp_ether_request, log)
 
 main() 
 
