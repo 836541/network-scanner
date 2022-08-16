@@ -87,11 +87,10 @@ def printOutput(singlerun, arp_ether_request, log):
     clearTerminal()
     menu()
     already_printed = list()
-    loop = 1 
     if log: 
         already_logged = list()
 
-
+    loop = 1
     while loop:
         answered_request = scapy.srp(arp_ether_request, timeout= 1, verbose= False)[0]
         
