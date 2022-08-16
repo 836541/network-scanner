@@ -39,7 +39,7 @@ If you don't use -l, no logs are created
 
 4- Can create logs with the output
 
-5- Error if a non IPv4 is inputed.
+5- Error if a non IPv4 is inputted.
 
 --------------------------
 **LEGACY_HOSTSCAN.PY**
