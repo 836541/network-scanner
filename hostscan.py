@@ -120,7 +120,7 @@ def printOutput(singlerun, arp_ether_request, log):
         if singlerun: 
             loop = 0 
 
-        if loop == 6:
+        if loop == 11:
             clearTerminal()
             menu()
             already_printed = list()
